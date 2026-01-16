@@ -28,7 +28,7 @@ body.dark {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 40px;
+  padding: 40px 20px;
 }
 
 header {
@@ -51,10 +51,12 @@ body.dark header {
   object-position: top;
   border-radius: 14px;
   filter: drop-shadow(0 12px 25px rgba(102,126,234,0.25));
+  flex-shrink: 0;
 }
 
 .header-content {
   flex: 1;
+  min-width: 0;
 }
 
 .header-content h1 {
@@ -108,6 +110,7 @@ body.dark .bio {
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
+  font-size: 14px;
 }
 
 body.dark .social-links a,
@@ -157,6 +160,7 @@ h2::after {
   border-radius: 8px;
   font-weight: 500;
   transition: all 0.25s ease;
+  font-size: 14px;
 }
 
 body.dark .skill-tag {
@@ -171,7 +175,7 @@ body.dark .skill-tag {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -208,6 +212,7 @@ body.dark .project-card {
 
 .project-content h3 {
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .project-tags {
@@ -233,6 +238,7 @@ body.dark .project-tags span {
 .project-content p {
   font-size: 14px;
   color: #555;
+  line-height: 1.6;
 }
 
 body.dark .project-content p {
@@ -251,10 +257,16 @@ body.dark .exp-card {
   background: #020617;
 }
 
+.exp-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
 .period {
   color: #667eea;
   font-weight: 600;
   margin-bottom: 12px;
+  font-size: 14px;
 }
 
 .cert-link {
@@ -297,11 +309,135 @@ footer {
   padding-top: 40px;
   border-top: 1px solid #e0e0e0;
   color: #666;
+  font-size: 14px;
 }
 
 body.dark footer {
   border-color: #334155;
   color: #94a3b8;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 16px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+
+  .profile-img {
+    width: 140px;
+    height: 190px;
+  }
+
+  .header-content h1 {
+    font-size: 32px;
+  }
+
+  .header-content .role {
+    font-size: 20px;
+  }
+
+  .header-content .bio {
+    font-size: 15px;
+  }
+
+  .social-links {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .social-links a,
+  #themeToggle {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  h2 {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .skill-tag {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .exp-card {
+    padding: 20px;
+  }
+
+  .exp-card h3 {
+    font-size: 18px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-content h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .header-content h1 {
+    font-size: 28px;
+  }
+
+  .header-content .role {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 160px;
+  }
+
+  .social-links {
+    gap: 8px;
+  }
+
+  .social-links a,
+  #themeToggle {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .projects-grid {
+    gap: 20px;
+  }
+
+  .project-content {
+    padding: 16px;
+  }
+
+  .exp-card {
+    padding: 16px;
+  }
 }
 </style>
 </head>
