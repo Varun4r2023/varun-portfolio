@@ -317,148 +317,30 @@ body.dark footer {
   color: #94a3b8;
 }
 
-/* Mobile Responsive Styles */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .container {
-    padding: 30px 16px;
-  }
-
-  header {
-    flex-direction: column;
-    text-align: center;
-    gap: 24px;
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-  }
-
-  .profile-img {
-    width: 140px;
-    height: 190px;
-  }
-
-  .header-content h1 {
-    font-size: 32px;
-  }
-
-  .header-content .role {
-    font-size: 20px;
-  }
-
-  .header-content .bio {
-    font-size: 15px;
-  }
-
-  .social-links {
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .social-links a,
-  #themeToggle {
-    padding: 8px 14px;
-    font-size: 13px;
-  }
-
-  h2 {
-    font-size: 26px;
-    margin-bottom: 24px;
-  }
-
-  section {
-    margin-bottom: 50px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .skill-tag {
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-
-  .exp-card {
-    padding: 20px;
-  }
-
-  .exp-card h3 {
-    font-size: 18px;
-  }
-
-  .project-content {
-    padding: 20px;
-  }
-
-  .project-content h3 {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 20px 12px;
-  }
-
-  .header-content h1 {
-    font-size: 28px;
-  }
-
-  .header-content .role {
-    font-size: 18px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  .profile-img {
-    width: 120px;
-    height: 160px;
-  }
-
-  .social-links {
-    gap: 8px;
-  }
-
-  .social-links a,
-  #themeToggle {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .projects-grid {
-    gap: 20px;
-  }
-
-  .project-content {
-    padding: 16px;
-  }
-
-  .exp-card {
-    padding: 16px;
-  }
+  header { flex-direction: column; text-align: center; }
+  .profile-img { width: 140px; height: 190px; }
+  .header-content h1 { font-size: 32px; }
+  .header-content .role { font-size: 20px; }
+  .projects-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
 <header>
   <img src="./varun-profile.png" class="profile-img" alt="Varun Rasal">
-
   <div class="header-content">
     <h1>Varun Rasal</h1>
     <div class="role">Data Analyst</div>
     <div class="location">📍 Mumbai, India</div>
-
     <p class="bio">
       Data Analyst with hands-on experience in SQL, Excel, Power BI, Python, Machine Learning, and AI tools,
       focused on transforming raw data into actionable business insights.
     </p>
-
     <div class="social-links">
       <a href="https://www.linkedin.com/in/varunr877/" target="_blank">LinkedIn</a>
       <a href="https://github.com/Varun4r2023" target="_blank">GitHub</a>
@@ -470,106 +352,34 @@ body.dark footer {
 </header>
 
 <section>
-<h2>Skills</h2>
-<div class="skills-grid">
-  <div class="skill-tag">SQL</div>
-  <div class="skill-tag">Excel</div>
-  <div class="skill-tag">Power BI</div>
-  <div class="skill-tag">Python</div>
-  <div class="skill-tag">EDA</div>
-  <div class="skill-tag">Statistical Analysis</div>
-  <div class="skill-tag">Machine Learning</div>
-</div>
-</section>
-
-<section>
 <h2>Projects</h2>
 <div class="projects-grid">
 
+<!-- Plant Disease -->
 <a href="https://github.com/Varun4r2023/PlantDoc-AI-Diagnostician" target="_blank" class="project-card">
-<img class="project-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Cdefs%3E%3ClinearGradient id='plantGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2310b981;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23059669;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='200' fill='url(%23plantGrad)'/%3E%3Ccircle cx='200' cy='100' r='45' fill='white' opacity='0.2'/%3E%3Ccircle cx='200' cy='100' r='35' fill='white' opacity='0.3'/%3E%3Ctext x='200' y='120' font-size='56' text-anchor='middle' fill='white'%3E🌿%3C/text%3E%3Ctext x='200' y='165' font-size='14' font-weight='600' text-anchor='middle' fill='white' opacity='0.9'%3EAI Disease Detection%3C/text%3E%3C/svg%3E">
-<div class="project-content">
-<h3>Plant Disease Detection System</h3>
-<div class="project-tags"><span>Python</span><span>PyTorch</span><span>Deep Learning</span></div>
-<p>
-Built a CNN-based plant disease detection system using ResNet-18.<br><br>
-• Achieved ~90% validation accuracy on multi-class dataset<br>
-• Implemented preprocessing, augmentation, and evaluation pipelines<br>
-• Deployed real-time predictions via FastAPI REST APIs<br>
-• Integrated with React frontend for end to end workflow
-</p>
-</div>
+  <img class="project-img" src="data:image/svg+xml,...">
+  <div class="project-content">
+    <h3>Plant Disease Detection System</h3>
+    <p>Built CNN-based plant disease detection using ResNet-18.</p>
+  </div>
 </a>
 
-<div class="project-card">
-<img class="project-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Cdefs%3E%3ClinearGradient id='churnGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f59e0b;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d97706;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='200' fill='url(%23churnGrad)'/%3E%3Ccircle cx='200' cy='100' r='45' fill='white' opacity='0.2'/%3E%3Ccircle cx='200' cy='100' r='35' fill='white' opacity='0.3'/%3E%3Ctext x='200' y='120' font-size='56' text-anchor='middle' fill='white'%3E👥%3C/text%3E%3Ctext x='200' y='165' font-size='14' font-weight='600' text-anchor='middle' fill='white' opacity='0.9'%3ECustomer Analytics%3C/text%3E%3C/svg%3E">
-<div class="project-content">
-<h3>Customer Churn Analysis</h3>
-<div class="project-tags"><span>Python</span><span>SQL</span><span>Power BI</span></div>
-<p>
-End-to-end customer churn analysis project.<br><br>
-• Analyzed 7,000+ customer records using Python & SQL<br>
-• Identified churn drivers through EDA and correlation analysis<br>
-• Built Power BI dashboards to visualize churn KPIs<br>
-• Proposed data-driven retention strategies
-</p>
-</div>
-</div>
-
-<div class="project-card">
-<img class="project-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Cdefs%3E%3ClinearGradient id='salesGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='200' fill='url(%23salesGrad)'/%3E%3Ccircle cx='200' cy='100' r='45' fill='white' opacity='0.2'/%3E%3Ccircle cx='200' cy='100' r='35' fill='white' opacity='0.3'/%3E%3Ctext x='200' y='120' font-size='56' text-anchor='middle' fill='white'%3E📈%3C/text%3E%3Ctext x='200' y='165' font-size='14' font-weight='600' text-anchor='middle' fill='white' opacity='0.9'%3EBusiness Intelligence%3C/text%3E%3C/svg%3E">
-<div class="project-content">
-<h3>Sales Performance Dashboard</h3>
-<div class="project-tags"><span>Power BI</span><span>DAX</span><span>Excel</span></div>
-<p>
-Interactive sales analytics dashboard.<br><br>
-• Visualized revenue, growth, and region-wise performance<br>
-• Created dynamic KPIs using DAX measures<br>
-• Centralized reporting for faster decision-making
-</p>
-</div>
-</div>
+<!-- Customer Churn (UPDATED CLICKABLE) -->
+<a href="https://github.com/Varun4r2023/Customer-Churn-Analysis" target="_blank" class="project-card">
+  <img class="project-img" src="data:image/svg+xml,...">
+  <div class="project-content">
+    <h3>Customer Churn Analysis</h3>
+    <p>End-to-end churn analysis using Python, SQL & Power BI.</p>
+  </div>
+</a>
 
 </div>
-</section>
-
-<section>
-<h2>Experience</h2>
-
-<div class="exp-card">
-<h3>Data Science Intern — Eduexpose</h3>
-<div class="period">Dec 2025 – Mar 2026</div>
-<p>
-Worked on data cleaning, EDA, feature engineering, and machine learning models.
-Gained hands-on experience with Pandas, NumPy, visualization, and big data concepts.
-</p>
-<div class="cert-note">Certificate will be available upon completion</div>
-</div>
-
-<div class="exp-card">
-<h3>AI/ML Intern — Infosys Springboard</h3>
-<div class="period">Sep 2025 – Nov 2025</div>
-<p>
-Developed and deployed a deep learning–based plant disease detection system using PyTorch,
-FastAPI, and React with real-time inference capabilities.
-</p>
-<a href="https://drive.google.com/file/d/1pVz6ZZia7LLB5xjzhw5P_TPuHhx5NMci/view?usp=sharing" target="_blank" class="cert-link">View Certificate</a>
-</div>
-
 </section>
 
 <footer>
 © 2026 Varun Rasal
 </footer>
 
-</div>
-
-<!-- ATS KEYWORDS -->
-<div style="display:none">
-Data Analyst, Data Analytics, SQL, Advanced SQL, Python, Pandas, NumPy, Excel,
-Power BI, DAX, Dashboarding, Data Visualization, Exploratory Data Analysis,
-Statistical Analysis, Machine Learning, Deep Learning, CNN, ResNet, PyTorch,
-FastAPI, REST API, ETL, Data Cleaning, Business Intelligence, KPI Analysis
 </div>
 
 <script>
