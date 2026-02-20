@@ -1,179 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Varun Rasal | Data Analyst</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varun Rasal | Data Analyst</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    body.dark {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    body.dark header {
+      border-color: #334155;
+    }
+    .profile-img {
+      width: 170px;
+      height: 230px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 14px;
+      filter: drop-shadow(0 12px 25px rgba(102,126,234,0.25));
+      flex-shrink: 0;
+    }
+    .header-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .header-content h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .header-content .role {
+      font-size: 24px;
+      color: #667eea;
+      font-weight: 600;
+    }
+    .header-content .location {
+      color: #666;
+      margin: 10px 0 16px;
+    }
+    body.dark .location {
+      color: #94a3b8;
+    }
+    .header-content .bio {
+      max-width: 600px;
+      color: #444;
+      margin-bottom: 22px;
+    }
+    body.dark .bio {
+      color: #cbd5f5;
+    }
+    .social-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .social-links a, #themeToggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-size: 14px;
+    }
+    body.dark .social-links a, body.dark #themeToggle {
+      background: #020617;
+      color: #e5e7eb;
+    }
+    .social-links a:hover, #themeToggle:hover {
+      background: #667eea;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    section {
+      margin-bottom: 70px;
+    }
+    h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .skill-tag {
+      background: #f5f5f5;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      font-size: 14px;
+    }
+    body.dark .skill-tag {
+      background: #020617;
+    }
+    .skill-tag:hover {
+      background: #667eea;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+    body.dark .project-card {
+      background: #020617;
+      border-color: #334155;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 40px rgba(102,126,234,0.25);
+      border-color: #667eea;
+    }
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 24px;
+    }
+    .project-content h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .project-tags span {
+      background: #eef2ff;
+      color: #667eea;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    body.dark .project-tags span {
+      background: #1e293b;
+    }
+    .project-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+    body.dark .project-content p {
+      color: #cbd5f5;
+    }
+    .exp-card {
+      background: #f9f9f9;
+      padding: 24px;
+      border-radius: 12px;
+      border-left: 4px solid #667eea;
+      margin-bottom: 24px;
+    }
+    body.dark .exp-card {
+      background: #020617;
+    }
+    .exp-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .period {
+      color: #667eea;
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    .cert-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: #667eea;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .cert-link:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+    }
+    .cert-note {
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: #eef2ff;
+      color: #667eea;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      display: inline-block;
+    }
+    body.dark .cert-note {
+      background: #1e293b;
+    }
+    footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid #e0e0e0;
+      color: #666;
+      font-size: 14px;
+    }
+    body.dark footer {
+      border-color: #334155;
+      color: #94a3b8;
+    }
 
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: #ffffff;
-  color: #1a1a1a;
-  line-height: 1.6;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-body.dark { background: #0f172a; color: #e5e7eb; }
-.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-header {
-  display: flex; align-items: center; gap: 40px;
-  margin-bottom: 60px; padding-bottom: 40px;
-  border-bottom: 1px solid #e0e0e0;
-}
-body.dark header { border-color: #334155; }
-.profile-img {
-  width: 170px; height: 230px; object-fit: cover;
-  object-position: top; border-radius: 14px;
-  filter: drop-shadow(0 12px 25px rgba(102,126,234,0.25));
-  flex-shrink: 0;
-}
-.header-content { flex: 1; min-width: 0; }
-.header-content h1 { font-size: 48px; font-weight: 700; margin-bottom: 6px; }
-.header-content .role { font-size: 24px; color: #667eea; font-weight: 600; }
-.header-content .location { color: #666; margin: 10px 0 16px; }
-body.dark .location { color: #94a3b8; }
-.header-content .bio { max-width: 600px; color: #444; margin-bottom: 22px; }
-body.dark .bio { color: #cbd5f5; }
-.social-links { display: flex; gap: 14px; flex-wrap: wrap; }
-.social-links a, #themeToggle {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 18px; background: #f5f5f5; color: #1a1a1a;
-  text-decoration: none; border-radius: 8px; font-weight: 500;
-  border: none; cursor: pointer; transition: all 0.25s ease; font-size: 14px;
-}
-body.dark .social-links a, body.dark #themeToggle {
-  background: #020617; color: #e5e7eb;
-}
-.social-links a:hover, #themeToggle:hover {
-  background: #667eea; color: #fff; transform: translateY(-2px);
-}
-section { margin-bottom: 70px; }
-h2 {
-  font-size: 32px; margin-bottom: 30px; position: relative; padding-bottom: 12px;
-}
-h2::after {
-  content: ''; position: absolute; bottom: 0; left: 0;
-  width: 60px; height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  border-radius: 2px;
-}
-.skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
-.skill-tag {
-  background: #f5f5f5; padding: 12px 18px;
-  border-radius: 8px; font-weight: 500;
-  transition: all 0.25s ease; font-size: 14px;
-}
-body.dark .skill-tag { background: #020617; }
-.skill-tag:hover {
-  background: #667eea; color: #fff; transform: translateY(-2px);
-}
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-.project-card {
-  background: #fff; border-radius: 14px; overflow: hidden;
-  border: 1px solid #e0e0e0; text-decoration: none;
-  color: inherit; transition: all 0.3s ease;
-}
-body.dark .project-card {
-  background: #020617; border-color: #334155;
-}
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 40px rgba(102,126,234,0.25);
-  border-color: #667eea;
-}
-.project-img { width: 100%; height: 200px; object-fit: cover; }
-.project-content { padding: 24px; }
-.project-content h3 { margin-bottom: 10px; font-size: 20px; }
-.project-tags {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
-}
-.project-tags span {
-  background: #eef2ff; color: #667eea;
-  padding: 6px 12px; border-radius: 6px;
-  font-size: 12px; font-weight: 600;
-}
-body.dark .project-tags span { background: #1e293b; }
-.project-content p {
-  font-size: 14px; color: #555; line-height: 1.6;
-}
-body.dark .project-content p { color: #cbd5f5; }
-.exp-card {
-  background: #f9f9f9; padding: 24px;
-  border-radius: 12px; border-left: 4px solid #667eea;
-  margin-bottom: 24px;
-}
-body.dark .exp-card { background: #020617; }
-.period {
-  color: #667eea; font-weight: 600;
-  margin-bottom: 12px; font-size: 14px;
-}
-footer {
-  text-align: center; padding-top: 40px;
-  border-top: 1px solid #e0e0e0;
-  color: #666; font-size: 14px;
-}
-body.dark footer { border-color: #334155; color: #94a3b8; }
-</style>
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .container { padding: 30px 16px; }
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+      }
+      .profile-img { width: 140px; height: 190px; }
+      .header-content h1 { font-size: 32px; }
+      .header-content .role { font-size: 20px; }
+      .header-content .bio { font-size: 15px; }
+      .social-links { justify-content: center; gap: 10px; }
+      .social-links a, #themeToggle { padding: 8px 14px; font-size: 13px; }
+      h2 { font-size: 26px; margin-bottom: 24px; }
+      section { margin-bottom: 50px; }
+      .projects-grid { grid-template-columns: 1fr; gap: 24px; }
+      .skill-tag { padding: 10px 14px; font-size: 13px; }
+      .exp-card { padding: 20px; }
+      .exp-card h3 { font-size: 18px; }
+      .project-content { padding: 20px; }
+      .project-content h3 { font-size: 18px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 20px 12px; }
+      .header-content h1 { font-size: 28px; }
+      .header-content .role { font-size: 18px; }
+      h2 { font-size: 24px; }
+      .profile-img { width: 120px; height: 160px; }
+      .social-links { gap: 8px; }
+      .social-links a, #themeToggle { padding: 8px 12px; font-size: 12px; }
+      .projects-grid { gap: 20px; }
+      .project-content { padding: 16px; }
+      .exp-card { padding: 16px; }
+    }
+  </style>
 </head>
-
 <body>
-<div class="container">
+  <div class="container">
 
-<header>
-  <img src="./varun-profile.png" class="profile-img" alt="Varun Rasal">
-  <div class="header-content">
-    <h1>Varun Rasal</h1>
-    <div class="role">Data Analyst</div>
-    <div class="location">📍 Mumbai, India</div>
-    <p class="bio">
-      Data Analyst with hands-on experience in SQL, Excel, Power BI, Python, Machine Learning, and AI tools,
-      focused on transforming raw data into actionable business insights.
-    </p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/varunr877/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Varun4r2023" target="_blank">GitHub</a>
-      <a href="mailto:varunrasal4@gmail.com">Email</a>
-      <a href="./Varun_Rasal_Data_Analyst_Resume.pdf" download>Resume</a>
-      <button id="themeToggle">🌙</button>
-    </div>
+    <header>
+      <img src="./varun-profile.png" class="profile-img" alt="Varun Rasal">
+      <div class="header-content">
+        <h1>Varun Rasal</h1>
+        <div class="role">Data Analyst</div>
+        <div class="location">📍 Mumbai, India</div>
+        <p class="bio">
+          Data Analyst with hands-on experience in SQL, Excel, Power BI, Python, Machine Learning, and AI tools, focused on transforming raw data into actionable business insights.
+        </p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/varunr877/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/Varun4r2023" target="_blank">GitHub</a>
+          <a href="mailto:varunrasal4@gmail.com">Email</a>
+          <a href="./Varun_Rasal_Data_Analyst_Resume.pdf" download>Resume</a>
+          <button id="themeToggle">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-tag">SQL</div>
+        <div class="skill-tag">Excel</div>
+        <div class="skill-tag">Power BI</div>
+        <div class="skill-tag">Python</div>
+        <div class="skill-tag">EDA</div>
+        <div class="skill-tag">Statistical Analysis</div>
+        <div class="skill-tag">Machine Learning</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Project 1: Plant Disease -->
+        <a href="https://github.com/Varun4r2023/PlantDoc-AI-Diagnostician" target="_blank" class="project-card">
+          <img class="project-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Cdefs%3E%3ClinearGradient id='plantGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2310b981;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23059669;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='200' fill='url(%23plantGrad)'/%3E%3Ccircle cx='200' cy='100' r='45' fill='white' opacity='0.2'/%3E%3Ccircle cx='200' cy='100' r='35' fill='white' opacity='0.3'/%3E%3Ctext x='200' y='120' font-size='56' text-anchor='middle' fill='white'%3E🌿%3C/text%3E%3Ctext x='200' y='165' font-size='14' font-weight='600' text-anchor='middle' fill='white' opacity='0.9'%3EAI Disease Detection%3C/text%3E%3C/svg%3E">
+          <div class="project-content">
+            <h3>Plant Disease Detection System</h3>
+            <div class="project-tags">
+              <span>Python</span><span>PyTorch</span><span>Deep Learning</span>
+            </div>
+            <p>
+              Built a CNN-based plant disease detection system using ResNet-18.<br><br>
+              • Achieved ~90% validation accuracy on multi-class dataset<br>
+              • Implemented preprocessing, augmentation, and evaluation pipelines<br>
+              • Deployed real-time predictions via FastAPI REST APIs<br>
+              • Integrated with React frontend for end to end workflow
+            </p>
+          </div>
+        </a>
+
+        <!-- Project 2: Customer Churn (NOW WITH LINK) -->
+        <a href="https://github.com/Varun4r2023/Customer-Churn-Analysis" target="_blank" class="project-card">
+          <img class="project-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Cdefs%3E%3ClinearGradient id='churnGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f59e0b;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d97706;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='200' fill='url(%23churnGrad)'/%3E%3Ccircle cx='200' cy='100' r='45' fill='white' opacity='0.2'/%3E%3Ccircle cx='200' cy='100' r='35' fill='white' opacity='0.3'/%3E%3Ctext x='200' y='120' font-size='56' text-anchor='middle' fill='white'%3E👥%3C/text%3E%3Ctext x='200' y='165' font-size='14' font-weight='600' text-anchor='middle' fill='white' opacity='0.9'%3ECustomer Analytics%3C/text%3E%3C/svg%3E">
+          <div class="project-content">
+            <h3>Customer Churn Analysis</h3>
+            <div class="project-tags">
+              <span>Python</span><span>SQL</span><span>Power BI</span>
+            </div>
+            <p>
+              End-to-end customer churn analysis project.<br><br>
+              • Analyzed 7,000+ customer records using Python & SQL<br>
+              • Identified churn drivers through EDA and correlation analysis<br>
+              • Built Power BI dashboards to visualize churn KPIs<br>
+              • Proposed data-driven retention strategies
+            </p>
+          </div>
+        </a>
+
+        <!-- Project 3: Sales Dashboard -->
+        <div class="project-card">
+          <img class="project-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Cdefs%3E%3ClinearGradient id='salesGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='200' fill='url(%23salesGrad)'/%3E%3Ccircle cx='200' cy='100' r='45' fill='white' opacity='0.2'/%3E%3Ccircle cx='200' cy='100' r='35' fill='white' opacity='0.3'/%3E%3Ctext x='200' y='120' font-size='56' text-anchor='middle' fill='white'%3E📈%3C/text%3E%3Ctext x='200' y='165' font-size='14' font-weight='600' text-anchor='middle' fill='white' opacity='0.9'%3EBusiness Intelligence%3C/text%3E%3C/svg%3E">
+          <div class="project-content">
+            <h3>Sales Performance Dashboard</h3>
+            <div class="project-tags">
+              <span>Power BI</span><span>DAX</span><span>Excel</span>
+            </div>
+            <p>
+              Interactive sales analytics dashboard.<br><br>
+              • Visualized revenue, growth, and region-wise performance<br>
+              • Created dynamic KPIs using DAX measures<br>
+              • Centralized reporting for faster decision-making
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="exp-card">
+        <h3>Data Science Intern — Eduexpose</h3>
+        <div class="period">Dec 2025 – Mar 2026</div>
+        <p>
+          Worked on data cleaning, EDA, feature engineering, and machine learning models.
+          Gained hands-on experience with Pandas, NumPy, visualization, and big data concepts.
+        </p>
+        <div class="cert-note">Certificate will be available upon completion</div>
+      </div>
+      <div class="exp-card">
+        <h3>AI/ML Intern — Infosys Springboard</h3>
+        <div class="period">Sep 2025 – Nov 2025</div>
+        <p>
+          Developed and deployed a deep learning–based plant disease detection system using PyTorch, FastAPI, and React with real-time inference capabilities.
+        </p>
+        <a href="https://drive.google.com/file/d/1pVz6ZZia7LLB5xjzhw5P_TPuHhx5NMci/view?usp=sharing" target="_blank" class="cert-link">View Certificate</a>
+      </div>
+    </section>
+
+    <footer>© 2026 Varun Rasal</footer>
+
   </div>
-</header>
 
-<section>
-<h2>Projects</h2>
-<div class="projects-grid">
+  <!-- ATS KEYWORDS -->
+  <div style="display:none">
+    Data Analyst, Data Analytics, SQL, Advanced SQL, Python, Pandas, NumPy, Excel, Power BI, DAX,
+    Dashboarding, Data Visualization, Exploratory Data Analysis, Statistical Analysis, Machine Learning,
+    Deep Learning, CNN, ResNet, PyTorch, FastAPI, REST API, ETL, Data Cleaning, Business Intelligence, KPI Analysis
+  </div>
 
-<!-- Plant Disease -->
-<a href="https://github.com/Varun4r2023/PlantDoc-AI-Diagnostician" target="_blank" class="project-card">
-  <!-- image and content unchanged -->
-</a>
-
-<!-- Customer Churn (NOW CLICKABLE) -->
-<a href="https://github.com/Varun4r2023/Customer-Churn-Analysis" target="_blank" class="project-card">
-  <!-- image and content unchanged -->
-</a>
-
-</div>
-</section>
-
-<footer>
-© 2026 Varun Rasal
-</footer>
-
-</div>
-
-<script>
-const toggle = document.getElementById("themeToggle");
-toggle.onclick = () => {
-  document.body.classList.toggle("dark");
-  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-};
-</script>
-
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    };
+  </script>
 </body>
 </html>
